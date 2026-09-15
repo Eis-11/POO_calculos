@@ -42,8 +42,22 @@ public class Calculos {
      * @return cantidad de vocales
      */
     int vocales(String texto) {
-        throw new UnsupportedOperationException("En construcción.");
+    int cantidad = 0;
+
+    texto = texto.toLowerCase();
+
+    for (int i = 0; i < texto.length(); i++) {
+        char letra = texto.charAt(i);
+
+        if (letra == 'a' || letra == 'e' || letra == 'i' ||
+            letra == 'o' || letra == 'u') {
+            cantidad++;
+        }
     }
+
+    return cantidad;
+}
+
 
     /**
      * *
@@ -54,7 +68,26 @@ public class Calculos {
      * @return texto invertida
      */
     String invertir(String texto) {
-        throw new UnsupportedOperationException("En construcción.");
+
+    String[] palabras = texto.split(" ");
+    String resultado = "";
+
+    for (int i = 0; i < palabras.length; i++) {
+
+        String palabraInvertida = "";
+
+        for (int j = palabras[i].length() - 1; j >= 0; j--) {
+            palabraInvertida += palabras[i].charAt(j);
+        }
+
+        resultado += palabraInvertida;
+
+        if (i < palabras.length - 1) {
+            resultado += " ";
+        }
     }
+
+    return resultado;
+}
 
 }
