@@ -21,7 +21,8 @@ public class Calculos {
      * @return valor absoluto
      */
     float absoluto(float num) {
-        throw new UnsupportedOperationException("En construcción.");
+        float res=Math.abs(num);
+        return res;
     }
 
     /**
